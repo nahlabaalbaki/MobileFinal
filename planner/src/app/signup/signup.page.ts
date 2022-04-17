@@ -13,7 +13,7 @@ export class SignupPage implements OnInit {
   ngOnInit() {
   }
   register(){
-    this.router.navigate(['signup']);
+    this.router.navigate(['login']);
   }
 
 }
