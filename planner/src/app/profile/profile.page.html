@@ -31,5 +31,20 @@
 
       </ion-card>
    
+      <ion-tabs  class="tab">
 
+        <ion-tab-bar  slot="bottom">
+          <ion-tab-button tab="ToDoList" (click)="todo()">
+            <ion-icon name="list-circle-outline"></ion-icon>
+            <ion-label>To-Do List</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button tab="Profile" (click)="profile()">
+            <ion-icon name="happy-outline"></ion-icon>
+            <ion-label>Profile</ion-label>
+          </ion-tab-button>
+      
+        </ion-tab-bar>
+      
+      </ion-tabs>
 </ion-content>
