@@ -1,19 +1,39 @@
 <?php
 
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: Content-Type');
 include("dbconnection.php");
 
 
-$query = $mysqli->prepare("SELECT username, password FROM users;");
-$query->execute();
 
-$array = $query->get_result();
-
-$response = [];
-
-while($user= $array->fetch_assoc()){
-    $response[] = $user;
+if(isset($_GET["username"]) && $_GET["username"]!=""){
+    $username=$_GET["username"];
+}
+else{
+	die("No Access");
+}
+if(isset($_GET["password"]) && $_GET["password"]!=""){
+    $password=hash("sha256",$_GET["password"]);
+}
+else{
+	die("No Access");
 }
 
-$json_response = json_encode($response);
-echo $json_response;		
-	?>
+$mysql="SELECT * FROM users WHERE username=? AND password=?";
+
+$stmt=$connection->prepare($mysql);
+$stmt->bind_param("ss",$username, $password);
+
+$stmt->execute();
+$result= $stmt->get_result();
+$array= [];
+while($row=$result->fetch_assoc()){
+	$array[]=$row;
+}
+
+$json_response =json_encode($array);
+echo $json_response;
+$stmt->close();
+$connection->close();
+
+?>
