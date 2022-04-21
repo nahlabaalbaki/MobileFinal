@@ -18,4 +18,7 @@ export class ProfilePage implements OnInit {
   todo(){
     this.router.navigate(['to-do-list']);
   }
+  password(){
+    this.router.navigate(['password']);
+  }
 }

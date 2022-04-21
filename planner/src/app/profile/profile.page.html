@@ -1,50 +1,41 @@
-<ion-header>
-
-</ion-header>
 
 <ion-content class="root">
+    
+  <ion-tabs  class="tab">
+
+    <ion-tab-bar  slot="bottom">
+      <ion-tab-button tab="ToDoList" (click)="todo()">
+        <ion-icon name="list-circle-outline"></ion-icon>
+        <ion-label>To-Do List</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="Profile" (click)="profile()">
+        <ion-icon name="happy-outline"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+  
+    </ion-tab-bar>
+  
+  </ion-tabs>
     <ion-card class="card" color="Light">
 
         <ion-card-header>
           <ion-card-title class="title">Your Profile</ion-card-title>
         </ion-card-header>
       
-        <ion-card-content>
+          <ion-card-content>
+            <ion-text>Name</ion-text><br><br>
+            <ion-text>Username</ion-text><br><br>
+            <ion-text>Email</ion-text><br><br>
 
-          <ion-list class="list">
-            <ion-item class="item" color="Light">
-              <ion-label>Name</ion-label>
-            </ion-item>
-            <ion-item class="item" color="Light">
-              <ion-label>Username</ion-label>
-            </ion-item>
-            <ion-item class="item" color="Light">
-              <ion-label>Email</ion-label>
-            </ion-item>
-          </ion-list>
+            <!-- <ion-text>{{user.name}}</ion-text>
+            <ion-text>{{user.username}}</ion-text>
+            <ion-text>{{user.email}}</ion-text> -->
 
-                <ion-button class="button2" color="Light" size="large">Edit</ion-button>
+          </ion-card-content>
 
-                <ion-label class="password" a href="../password/password.page.html"><br><br>Do you want to change your password?</ion-label>
-        
-        </ion-card-content>
 
-      </ion-card>
-   
-      <ion-tabs  class="tab">
-
-        <ion-tab-bar  slot="bottom">
-          <ion-tab-button tab="ToDoList" (click)="todo()">
-            <ion-icon name="list-circle-outline"></ion-icon>
-            <ion-label>To-Do List</ion-label>
-          </ion-tab-button>
-      
-          <ion-tab-button tab="Profile" (click)="profile()">
-            <ion-icon name="happy-outline"></ion-icon>
-            <ion-label>Profile</ion-label>
-          </ion-tab-button>
-      
-        </ion-tab-bar>
-      
-      </ion-tabs>
+        <ion-button class="button2" color="Light" size="large" (click)="password()">Change Password?</ion-button>
+  </ion-card>
+ 
 </ion-content>

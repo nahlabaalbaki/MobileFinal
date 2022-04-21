@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'password',
     loadChildren: () => import('./password/password.module').then( m => m.PasswordPageModule)
   },
+  {
+    path: 'to-do-list2',
+    loadChildren: () => import('./to-do-list2/to-do-list2.module').then( m => m.ToDoList2PageModule)
+  },
 
 
 ];

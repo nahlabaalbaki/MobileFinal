@@ -15,9 +15,9 @@ export class SignupPage implements OnInit {
     private service:UserService) { }
 
   ngOnInit() {
-    this.service.addNewUser(this.user).subscribe (response =>{
-      this.users = response;
-    });
+    // this.service.addNewUser(this.user).subscribe (response =>{
+    //   this.users = response;
+    // });
   }
   register(){
     this.router.navigate(['login']);
