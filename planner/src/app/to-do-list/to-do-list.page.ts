@@ -18,4 +18,8 @@ export class ToDoListPage implements OnInit {
   todo(){
     this.router.navigate(['to-do-list']);
   }
+  todo2(){
+    this.router.navigate(['to-do-list2']);
+  }
+  
 }

@@ -1,58 +1,17 @@
-<ion-header [translucent]="true">
 
-</ion-header>
+<ion-content class="root">
+    
+  <ion-tabs  class="tab">
 
-<ion-content [fullscreen]="true" class="root">
-
-  <ion-card class="card2" color="Light">
-    <ion-card-header>
-      <ion-card-title class="title">Tasks</ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-
-      <ion-item class="item" color="Light">
-        <ion-label position="floating">Task 1</ion-label>
-        <ion-input type="name" class="input"></ion-input>
-     </ion-item>
-
-     <ion-item class="item" color="Light">
-      <ion-label position="floating">Task 2</ion-label>
-      <ion-input type="name" class="input"></ion-input>
-     </ion-item>
-
-     <ion-item class="item" color="Light">
-      <ion-label position="floating">Task 3</ion-label>
-      <ion-input type="name" class="input"></ion-input>
-    </ion-item>
-
-    <ion-item class="item" color="Light">
-      <ion-label position="floating">Task 4</ion-label>
-      <ion-input type="name" class="input"></ion-input>
-   </ion-item>
-
-   <ion-item class="item" color="Light">
-    <ion-label position="floating">Task 5</ion-label>
-    <ion-input type="name" class="input"></ion-input>
- </ion-item>
-
-  <ion-item class="item" color="Light">
-    <ion-label position="floating">Task 6</ion-label>
-    <ion-input type="name" class="input"></ion-input>
-  </ion-item>
-  
-      <ion-button class="button1" color="Light" size="large">Edit</ion-button>
-      <ion-button class="button2" color="Light" size="large">Done</ion-button>
-      
-    </ion-card-content>
-  </ion-card>
-
-  <ion-tabs class="tab">
-
-    <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="ToDoList"  (click)="todo()">
+    <ion-tab-bar  slot="bottom">
+      <ion-tab-button tab="ToDoList" (click)="todo()">
         <ion-icon name="list-circle-outline"></ion-icon>
         <ion-label>To-Do List</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="ToDoList2" (click)="todo2()">
+        <ion-icon name="happy-outline"></ion-icon>
+        <ion-label>Tasks</ion-label>
       </ion-tab-button>
   
       <ion-tab-button tab="Profile" (click)="profile()">
@@ -63,5 +22,18 @@
     </ion-tab-bar>
   
   </ion-tabs>
-  
+    <ion-card class="card" color="Light">
+
+        <ion-card-header>
+          <ion-card-title class="title">Tasks</ion-card-title>
+        </ion-card-header>
+      
+          <ion-card-content>
+            <ion-text>Tasks are here</ion-text><br><br>
+
+            <!-- <ion-text>{{list.notes}}</ion-text> -->
+
+          </ion-card-content>
+  </ion-card>
+ 
 </ion-content>
