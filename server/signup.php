@@ -1,5 +1,6 @@
 <?php
-
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: Content-Type');
 include("dbconnection.php");
 
 if(isset($_POST['name']) && $_POST['name']!=""){
@@ -40,6 +41,7 @@ $mysql = "INSERT INTO users (name, username, password, email) VALUES (?, ?, ?, ?
 $query = $connection->prepare($mysql);
 $query->bind_param("ssss", $name, $username, $password, $email);
 $query->execute();
+
 
 
 $json_response = json_encode($response);
