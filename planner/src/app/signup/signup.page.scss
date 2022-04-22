@@ -4,36 +4,34 @@
 
 .card{
 	background-color: rgb(242, 247, 247);
-	height: 610px;
+	height: 520px;
 	
 }
 .item{
 	background: rgb(242, 247, 247);
-	padding-bottom: 20px;
 
 }
 .title{
 	text-align: center;
 	font-size: 35px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    padding-bottom: 20px;
+    padding-bottom:5px;
+    
 }
 .subtitle{
 	text-align: center;
 	font-size: 15px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
 }
 .button2{
 
     color: #000000;
     background-color: #a2d5dc;
-    top:520px;
-    display: block;
+    margin-left: 35px;
+    margin-top:30px;
     border-radius: 10px;
-    width: 155px;
-    margin: auto;
-    align-items: center;
-    text-align: center;
+    width: 140px;
     font-size: 16px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-transform: none;
