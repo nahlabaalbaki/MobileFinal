@@ -15,22 +15,22 @@
             <form #f="ngForm" (ngSubmit)="onSubmit(f)">
             <ion-item class="item" color="Light">
                 <ion-label position="floating">Name</ion-label>
-                <ion-input ngModel placeholder="Name" type="name" name="name" required></ion-input>
+                <ion-input ngModel  type="name" name="name" required></ion-input>
             </ion-item>
           
             <ion-item class="item" color="Light">
                 <ion-label position="floating">Username</ion-label>
-                <ion-input ngModel placeholder="Username"type="name"name="username" required></ion-input>
+                <ion-input ngModel type="name"name="username" required></ion-input>
             </ion-item>
 
             <ion-item class="item" color="Light">
                 <ion-label position="floating">Password</ion-label>
-                <ion-input ngModel placeholder="Password" type="password" name="password" required></ion-input>
+                <ion-input ngModel type="password" name="password" required></ion-input>
             </ion-item>
 
             <ion-item class="item" color="Light">
                 <ion-label position="floating">Email</ion-label>
-                <ion-input ngModel placeholder="Email" type="email" name="email" required></ion-input>
+                <ion-input ngModel type="email" name="email" required></ion-input>
             </ion-item>
             <ion-button class="button2" color="Light" name="submit" type="submit" size="large" >Sign Up</ion-button>
         </form>

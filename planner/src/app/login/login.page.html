@@ -12,19 +12,19 @@
         </ion-card-header>
       
         <ion-card-content>
-          
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
             <ion-item class="item" color="Light">
                 <ion-label position="floating">Username</ion-label>
-                <ion-input type="name" required></ion-input>
+                <ion-input ngModel name="username" type="name" required></ion-input>
             </ion-item>
 
             <ion-item class="item" color="Light">
                 <ion-label position="floating">Password</ion-label>
-                <ion-input type="password" required></ion-input>
+                <ion-input ngModel name="password" type="password" required></ion-input>
             </ion-item>
 
-                <ion-button class="button2" color="Light" size="large" (click)="login()">Login</ion-button>
-        
+                <ion-button class="button2" color="Light" size="large" type="submit">Login</ion-button>
+        </form>
         </ion-card-content>
 
       </ion-card>

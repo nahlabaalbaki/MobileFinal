@@ -24,9 +24,9 @@ export class UserService {
       return this.http.post(this.url + "signup.php", user);
     }
 
-    // getUsertoLogin(){ //this isa get function used for when want to login
-    //   return this.http.get<[users]>(this.url + "login.php");
-    // }
+    getUsertoLogin(username:string, password:string){ //this is a get function used for to login
+      return this.http.get<[users]>(this.url + 'login.php?username=' + username+ '&password='+password);
+    }
     
     // getSingleUserProfile(){ //this is a get function used for when we want to view profile
     //   return this.http.get<[users]>(this.url + "profile.php");
