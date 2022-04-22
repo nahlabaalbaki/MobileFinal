@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { users, UserService } from '../apis/user.service';
 
@@ -8,19 +9,27 @@ import { users, UserService } from '../apis/user.service';
   styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
-  user:users[];
+
 
   constructor(
     private router: Router,
     private service:UserService) { }
 
+    onSubmit(form:NgForm){
+      
+      const user = form.value;
+       
+      this.service.addNewUser(user).subscribe(response =>{
+        this.router.navigate(['login']);
+      });
+     
+  }
+
   ngOnInit() {
-    // this.service.addNewUser(this.user).subscribe (response =>{
-    //   this.users = response;
-    // });
+ 
   }
-  register(){
-    this.router.navigate(['login']);
-  }
+  // register(){
+  //   this.router.navigate(['login']);
+  // }
 
 }

@@ -3,33 +3,15 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: Content-Type');
 include("dbconnection.php");
 
-if(isset($_POST['name']) && $_POST['name']!=""){
-    $name = $_POST["name"];
+$data = json_decode(file_get_contents("php://input"));
 
-}else{
-    die('No Access');
-}
 
-if(isset($_POST['username']) && $_POST['username']!=""){
-    $username = $_POST["username"];
+    $name = $data->name;
+    $username = $data->username;
+    $password = hash("sha256", $data->password);
+    $email = $data->email;
 
-}else{
-    die('No Access');
-}   
 
-if(isset($_POST['password']) && $_POST['password']!=""){
-    $password = hash("sha256", $_POST["password"]);
-
-}else{
-    die('No Access');
-}
-
-if(isset($_POST['email']) && $_POST['email']!=""){
-    $email = $_POST["email"];
-
-}else{
-    die('No Access');
-}
 
 $response = [];
 $response["name"] = $name;
@@ -47,5 +29,6 @@ $query->execute();
 $json_response = json_encode($response);
 echo $json_response;
 
-
+$query->close();
+$connection->close();
 ?>

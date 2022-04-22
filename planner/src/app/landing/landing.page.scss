@@ -7,45 +7,31 @@
     position:fixed;
 	
 }
-.item{
-	background: rgb(242, 247, 247);
-	padding-bottom: 50px;
-
-}
 .title{
 	text-align: center;
 	font-size: 35px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    padding-bottom: 20px;
+    margin-bottom: 60px;
 }
 .button1{
 
     color: #000000;
     background-color: #a2d5dc;
-    position: fixed;
-    top:220px;
-    left: 50px;
+    margin-left:50px;
     border-radius: 10px;
     width: 155px;
-    margin: auto;
-    align-items: center;
-    text-align: center;
     font-size: 16px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-transform: none;
+    margin-bottom:70px;
 }
 .button2{
 
     color: #000000;
     background-color: #a2d5dc;
-    position: fixed;
-    top:340px;
-    left: 50px;
+    margin-left:50px;
     border-radius: 10px;
     width: 155px;
-    margin: auto;
-    align-items: center;
-    text-align: center;
     font-size: 16px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-transform: none;

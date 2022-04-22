@@ -12,10 +12,12 @@ export class LoginPage implements OnInit {
   constructor(private router: Router, private service:UserService) { }
 
   ngOnInit() {
-    this.service.getUsertoLogin().subscribe (response =>{
-      this.user = response;
-    });
+    // this.service.getUsertoLogin().subscribe (response =>{
+    //   this.user =  response;
+    //   console.log(this.user);
+    // })
   }
+
   login(){
     this.router.navigate(['to-do-list']);
   }
