@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { tasks, TasksService } from '../apis/tasks.service';
 
 @Component({
   selector: 'app-to-do-list2',
@@ -8,9 +9,19 @@ import { Router } from '@angular/router';
 })
 export class ToDoList2Page implements OnInit {
 
-  constructor(private router: Router) { }
+  task:any=[];
+
+  constructor(private router: Router, private service:TasksService) { }
 
   ngOnInit() {
+
+    this.service.getTasks(localStorage.getItem("user_id")).subscribe(response =>{
+      this.task=response;
+    }
+    ,(error:any)=>{
+      console.log("Error task",error);
+    }
+)
   }
   profile(){
     this.router.navigate(['profile']);

@@ -28,12 +28,12 @@ export class UserService {
       return this.http.get<[users]>(this.url + 'login.php?username=' + username+ '&password='+password);
     }
     
-    // getSingleUserProfile(){ //this is a get function used for when we want to view profile
+    // getUserProfile(){ //this is a get function used for when we want to view profile
     //   return this.http.get<[users]>(this.url + "profile.php");
     // }
 
     // changePassword(user:users){ //This is a post function used for when password is changed
-    //   return this.http.post(this.url + "password.php", JSON.stringify(user.password));
+    //   return this.http.post(this.url + "password.php",user);
     // }
 
 }

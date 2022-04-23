@@ -28,13 +28,16 @@
           <ion-card-title class="title">Tasks</ion-card-title>
         </ion-card-header>
       
-          <ion-card-content>
+        <ion-card-content>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
             <ion-item class="item" color="Light">
               <ion-label position="floating">Write your Tasks</ion-label>
-              <ion-input type="tasks" required></ion-input>
+              <ion-input ngModel name="tasks"type="tasks" required></ion-input>
           </ion-item>
-
+          <ion-button class="button2" color="Light" name="submit" type="submit" size="large" >Done</ion-button>
+        </form>
           </ion-card-content>
+          
   </ion-card>
  
 </ion-content>

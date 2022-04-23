@@ -11,9 +11,11 @@ import { users, UserService } from '../apis/user.service';
 })
 export class LoginPage implements OnInit {
   private mytoast: any;
+  loggeduser:any;
+
   constructor(private router: Router, 
     private service:UserService ,
-    private toast: ToastController) { }
+    private toast: ToastController,) { }
 
   ngOnInit() {
   
@@ -21,13 +23,17 @@ export class LoginPage implements OnInit {
   onSubmit(form:NgForm){
       
     const user = form.value;
+    
     if(user.username==='' || user.password==='' ){
       this.show('Please fill out the required fields');
     }else{
     this.service.getUsertoLogin(user.username, user.password).subscribe(response =>{
-      if(response[0]){
+      if(response){
+        this.loggeduser = response;
+        localStorage.setItem("user_id",this.loggeduser.user_id);
         this.show('You are now logged in.');
         this.router.navigate(['to-do-list']);
+        
       }
       else{
         this.show('Account cannot be found.');
