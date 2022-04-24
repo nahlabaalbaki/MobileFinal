@@ -2,10 +2,7 @@
 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: Content-Type');
-
 include("dbconnection.php");
-
-
 
 if(isset($_GET["username"]) && $_GET["username"]!=""){
     $username=$_GET["username"];
@@ -27,13 +24,12 @@ $stmt->bind_param("ss",$username, $password);
 
 $stmt->execute();
 $result= $stmt->get_result();
-$array= [];
-while($row=$result->fetch_assoc()){
-	$array[]=$row;
-}
 
-$json_response =json_encode($array);
+$row=$result->fetch_assoc();
+$json_response =json_encode($row);
+
 echo $json_response;
+
 $stmt->close();
 $connection->close();
 

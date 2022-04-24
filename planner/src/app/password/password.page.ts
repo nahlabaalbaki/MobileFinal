@@ -27,9 +27,8 @@ export class PasswordPage implements OnInit {
     }else{
      
     this.service.changePassword(user,localStorage.getItem("user_id")).subscribe(response =>{
-      this.router.navigate(['profile']);
       this.show('Password Updated');
-
+      this.router.navigate(['profile']);
       
     });
   } 

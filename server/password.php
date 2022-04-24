@@ -1,28 +1,25 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: Content-Type');
-session_start();
+
 include("dbconnection.php");
 
-if(isset($_POST['newpassword']))
-{
- $oldpass=$_GET["password"];
- $username=$_SESSION['login'];
- $newpassword=("sha256",$_POST['newpassword']);
-$sql=mysqli_query($connection,"SELECT password FROM users where password='$oldpass' && username='$username'");
+$id = $_GET["user_id"]; 
 
-$num=mysqli_fetch_array($sql);
-if($num>0)
-{
- $con=mysqli_query($connection,"Update users set password=' $newpassword' where username='$username'");
-echo "Password Changed Successfully !!";
-}
-else
-{
-echo="Failed!";
-}
-}
+$data = json_decode(file_get_contents("php://input"));
+
+$password = hash("sha256", $data->password);
 
 
+$query1=$connection->prepare("UPDATE users SET password=? WHERE user_id = ?");
+$query1->bind_param("si", $password,$id);
+$query1->execute();
 
+
+$query1->close();
+$connection->close();
 ?>
+
+
+
+
