@@ -15,13 +15,7 @@ export class ToDoList2Page implements OnInit {
 
   ngOnInit() {
 
-    this.service.getTasks(localStorage.getItem("user_id")).subscribe(response =>{
-      this.task=response;
-    }
-    ,(error:any)=>{
-      console.log("Error task",error);
-    }
-)
+    this.TASK();
   }
   profile(){
     this.router.navigate(['profile']);
@@ -32,4 +26,15 @@ export class ToDoList2Page implements OnInit {
   todo2(){
     this.router.navigate(['to-do-list2']);
   }
+
+  TASK(){
+    this.service.getTasks(localStorage.getItem("user_id")).subscribe(response =>{
+      this.task=response;
+    }
+    ,(error:any)=>{
+      console.log("Error task",error);
+    }
+)
+  }
+
 }

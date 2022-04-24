@@ -4,13 +4,22 @@
 
 .card{
     background-color: rgb(242, 247, 247);
-    height:380px;   
+    height:480px;   
 }
 .title{
     text-align: center;
     font-size: 35px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-bottom: 20px;
+}
+
+.text{
+    padding-bottom: -100px;
+ 
+}
+.box{
+top:8px;
+right:10px;
 }
 
 .button2{

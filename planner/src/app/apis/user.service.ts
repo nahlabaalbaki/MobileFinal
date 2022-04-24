@@ -28,13 +28,13 @@ export class UserService {
       return this.http.get<[users]>(this.url + 'login.php?username=' + username+ '&password='+password);
     }
     
-    // getUserProfile(){ //this is a get function used for when we want to view profile
-    //   return this.http.get<[users]>(this.url + "profile.php");
-    // }
+    getUserProfile(user_id:any){ //this is a get function used for when we want to view profile
+      return this.http.get<[users]>(this.url + "profile.php?user_id="+user_id);
+    }
 
-    // changePassword(user:users){ //This is a post function used for when password is changed
-    //   return this.http.post(this.url + "password.php",user);
-    // }
+    changePassword(user:users, user_id:any){ //This is a post function used for when password is changed
+      return this.http.post(this.url + "password.php?user_id="+user_id,user);
+    }
 
 }
 

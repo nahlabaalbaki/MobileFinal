@@ -27,11 +27,12 @@
         <ion-card-header>
           <ion-card-title class="title">Tasks</ion-card-title>
         </ion-card-header>
-      
-          <ion-card-content *ngFor="let item of task">
-            <ion-text>Tasks are here</ion-text><br><br>
 
-            <ion-text>{{item.tasks}}</ion-text>
+        <ion-text>Tasks History</ion-text>
+        
+          <ion-card-content *ngFor="let item of task">
+            <ion-checkbox class="box" color="light" size="small" checked="false"></ion-checkbox>
+            <ion-text class="text">{{item.tasks}}</ion-text>
 
           </ion-card-content>
   </ion-card>

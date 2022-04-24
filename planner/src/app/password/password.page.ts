@@ -17,24 +17,33 @@ export class PasswordPage implements OnInit {
     private service:UserService, 
     private toast: ToastController) { }
 
-//   onSubmit(form:NgForm){
+  onSubmit(form:NgForm){
       
-//     const user = form.value;
-//     this.service.changePassword(user).subscribe(response =>{
-//       this.show('Password Changed');
-//     });
-  
+    var user = form.value;
+    user["user_id"]=localStorage.getItem("user_id");
+
+    if(user.password===''){
+      this.show('Please fill out the required fields');
+    }else{
+     
+    this.service.changePassword(user,localStorage.getItem("user_id")).subscribe(response =>{
+      this.router.navigate(['profile']);
+      this.show('Password Updated');
+
+      
+    });
+  } 
    
-// }
-// show(message: string) {
-//   this.mytoast = this.toast.create({
-//     message: message,
-//     duration: 2000
-//   }).then((toastdata) => {
-//     console.log(toastdata);
-//     toastdata.present();
-//   });
-// }
+}
+show(message: string) {
+  this.mytoast = this.toast.create({
+    message: message,
+    duration: 2000
+  }).then((toastdata) => {
+    console.log(toastdata);
+    toastdata.present();
+  });
+}
 
 
 

@@ -11,12 +11,10 @@ export class ProfilePage implements OnInit {
 
   constructor(private router: Router, private service:UserService) { }
   
-  user:users[];
+  user:any=[];
 
   ngOnInit() {
-    // this.service.getUserProfile().subscribe(response =>{
-    //   this.user=response;
-    // })
+    this.PROFILE();
   }
   profile(){
     this.router.navigate(['profile']);
@@ -29,5 +27,11 @@ export class ProfilePage implements OnInit {
   }
   password(){
     this.router.navigate(['password']);
+  }
+
+  PROFILE(){
+    this.service.getUserProfile(localStorage.getItem("user_id")).subscribe(response =>{
+      this.user=response;
+    })
   }
 }

@@ -19,8 +19,7 @@ export class ToDoListPage implements OnInit {
       
       var task= form.value;
       task["user_id"]=localStorage.getItem("user_id");
-      console.log("yara");
-      console.log(task);
+   
 
       if(task.task===''){
         this.show('Please fill out the required fields');
