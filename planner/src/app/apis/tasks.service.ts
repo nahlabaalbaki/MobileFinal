@@ -16,12 +16,12 @@ export class TasksService {
 
   constructor(private http:HttpClient) { }
 
-  addNewTask(task:tasks){ //This is a post function in order to post in the database the tasks
+  addNewTask(task:tasks){ //The following is a post function. It takes tasks as input from the user and adds it in the database.
     return this.http.post(this.url + "addtasks.php", task);
   }
 
-  getTasks(user_id:any){
-    return this.http.get(this.url + "viewtasks.php?user_id="+user_id);
+  getTasks(user_id:any){//The following is a get function. It gets the tasks from database and the users will be able to view the
+    return this.http.get(this.url + "viewtasks.php?user_id="+user_id);//tasks addedd previously by him/her
   }
 
 

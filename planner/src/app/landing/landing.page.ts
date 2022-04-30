@@ -13,10 +13,10 @@ export class LandingPage implements OnInit {
   ngOnInit() {
   }
   login(){
-    this.router.navigate(['login']);
+    this.router.navigate(['login']); //By clicking on this button, the user will be rendered to the login page.
   }
   register(){
-    this.router.navigate(['signup']);
+    this.router.navigate(['signup']);//By clicking on this button, the user will be rendered to the signup page.
   }
 
 }
