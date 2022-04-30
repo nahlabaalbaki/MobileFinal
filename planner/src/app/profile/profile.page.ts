@@ -28,6 +28,13 @@ export class ProfilePage implements OnInit {
   password(){
     this.router.navigate(['password']);
   }
+  
+  logout(){
+    this.router.navigate(['landing']);
+  }
+  editprofile(){
+    this.router.navigate(['profile2']);
+  }
 
   PROFILE(){
     this.service.getUserProfile(localStorage.getItem("user_id")).subscribe(response =>{

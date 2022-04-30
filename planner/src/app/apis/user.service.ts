@@ -35,7 +35,9 @@ export class UserService {
     changePassword(user:users, user_id:any){ //This is a post function used for when password is changed
       return this.http.post(this.url + "password.php?user_id="+user_id,user);
     }
-
+    editProfile(user:users, user_id:any){ //This is a post function used for when profile is changed
+      return this.http.post(this.url + "editprofile.php?user_id="+user_id,user);
+    }
 }
 
 

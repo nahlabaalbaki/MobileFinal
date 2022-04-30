@@ -17,6 +17,7 @@ export class ToDoList2Page implements OnInit {
 
     this.TASK();
   }
+
   profile(){
     this.router.navigate(['profile']);
   }

@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'to-do-list2',
     loadChildren: () => import('./to-do-list2/to-do-list2.module').then( m => m.ToDoList2PageModule)
   },
+  {
+    path: 'profile2',
+    loadChildren: () => import('./profile2/profile2.module').then( m => m.Profile2PageModule)
+  },
 
 
 ];

@@ -1,0 +1,38 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content class="root">
+
+    <ion-card class="card" color="Light">
+
+        <ion-card-header>
+          <ion-card-title class="title">Edit Profile</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+          
+            <ion-item class="item" color="Light">
+                <ion-input ngModel placeholder=" Name" type="name" name="name" ></ion-input>
+            </ion-item>
+
+            <ion-item class="item" color="Light">
+                <ion-input ngModel placeholder="Username" type="name" name="username" ></ion-input>
+            </ion-item>
+
+            <ion-item class="item" color="Light">
+              <ion-input ngModel placeholder="Email" type="email" name="email" ></ion-input>
+          </ion-item>
+          
+            
+                <ion-button class="button2" color="Light" size="large" type="submit" name="submit" >Confirm</ion-button>
+                <ion-button class="back" color="Light" size="large" (click)="profile()"> Back </ion-button>
+            </form>
+        </ion-card-content>
+
+      </ion-card>
+   
+
+</ion-content>
+

@@ -8,11 +8,13 @@ $id = $_GET["user_id"];
 
 $data = json_decode(file_get_contents("php://input"));
 
-$password = hash("sha256", $data->password);
+$name = $data->name;
+$username = $data->username;
+$email = $data->email;
 
 
-$query1=$connection->prepare("UPDATE users SET password=? WHERE user_id = ?");
-$query1->bind_param("si", $password,$id);
+$query1=$connection->prepare("UPDATE users SET name=? , username =?, email=? WHERE user_id = ?");
+$query1->bind_param("sssi", $name,$username, $email,$id);
 $query1->execute();
 
 
@@ -22,7 +24,5 @@ $connection->close();
 
 echo true;
 ?>
-
-
 
 
