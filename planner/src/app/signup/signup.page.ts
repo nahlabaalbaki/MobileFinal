@@ -22,7 +22,7 @@ export class SignupPage implements OnInit {
       
       const user = form.value;
       if(user.name==='' || user.username==='' || user.password==='' || user.email===''){
-        this.show('Please fill out the required fields');
+        this.show('Please fill out the required fields'); //To verify that input fields are not empty.
       }else{
        
       this.service.addNewUser(user).subscribe(response =>{
@@ -32,7 +32,7 @@ export class SignupPage implements OnInit {
     }
      
   }
-  show(message: string) {
+  show(message: string) { //This is a toast function that appears to the user when the action being performed is successful.
     this.mytoast = this.toast.create({
       message: message,
       duration: 2000

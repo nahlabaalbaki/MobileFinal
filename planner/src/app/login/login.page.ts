@@ -25,12 +25,12 @@ export class LoginPage implements OnInit {
     const user = form.value;
     
     if(user.username==='' || user.password==='' ){
-      this.show('Please fill out the required fields');
+      this.show('Please fill out the required fields'); // In order to validate that the fileds are not empty
     }else{
     this.service.getUsertoLogin(user.username, user.password).subscribe(response =>{
       if(response){
         this.loggeduser = response;
-        localStorage.setItem("user_id",this.loggeduser.user_id);
+        localStorage.setItem("user_id",this.loggeduser.user_id); //User_id is used as a local storage to being able to track which user.
         this.show('You are now logged in.');
         this.router.navigate(['to-do-list']);
         
@@ -41,7 +41,7 @@ export class LoginPage implements OnInit {
     });
     } 
 }
-show(message: string) {
+show(message: string) { //This is a toast function that appears to the user when the action being performed is successful.
   this.mytoast = this.toast.create({
     message: message,
     duration: 2000

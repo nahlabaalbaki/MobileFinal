@@ -25,7 +25,7 @@ export class Profile2Page implements OnInit {
     user["user_id"]=localStorage.getItem("user_id");
   
     if(user.name==='' || user.username==='' || user.email==='' ){
-      this.show('Please fill out the required fields');
+      this.show('Please fill out the required fields'); //To verify fields are not empty.
     }else{
    
     this.service.editProfile(user,localStorage.getItem("user_id")).subscribe(response =>{
@@ -36,7 +36,7 @@ export class Profile2Page implements OnInit {
   } 
    
 }
-show(message: string) {
+show(message: string) { //This is a toast function that appears to the user when the action being performed is successful.
   this.mytoast = this.toast.create({
     message: message,
     duration: 2000
@@ -49,7 +49,7 @@ show(message: string) {
   ngOnInit() {
   }
 
-  profile(){
+  profile(){  //By clicking on this button, the user will be rendered to the profile page after clicking on the back button.
     this.router.navigate(['profile']);
   }
 

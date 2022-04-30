@@ -19,13 +19,13 @@ export class ToDoList2Page implements OnInit {
   }
 
   profile(){
-    this.router.navigate(['profile']);
+    this.router.navigate(['profile']); //By clicking on this button, the user will be rendered to the profile page.
   }
   todo(){
-    this.router.navigate(['to-do-list']);
+    this.router.navigate(['to-do-list']); //By clicking on this button, the user will be rendered to the add new tasks page.
   }
   todo2(){
-    this.router.navigate(['to-do-list2']);
+    this.router.navigate(['to-do-list2']); //By clicking on this button, the user will be rendered to the view added tasks page.
   }
 
   TASK(){

@@ -38,7 +38,7 @@ export class ToDoListPage implements OnInit {
     }
      
   }
-  show(message: string) {
+  show(message: string) { //This is a toast function that appears to the user when the action being performed is successful.
     this.mytoast = this.toast.create({
       message: message,
       duration: 2000

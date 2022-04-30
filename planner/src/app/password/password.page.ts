@@ -23,7 +23,7 @@ export class PasswordPage implements OnInit {
     user["user_id"]=localStorage.getItem("user_id");
 
     if(user.password===''){
-      this.show('Please fill out the required fields');
+      this.show('Please fill out the required fields'); //In order to verify fields are not empty.
     }else{
      
     this.service.changePassword(user,localStorage.getItem("user_id")).subscribe(response =>{
@@ -34,7 +34,7 @@ export class PasswordPage implements OnInit {
   } 
    
 }
-show(message: string) {
+show(message: string) { //This is a toast function that appears to the user when the action being performed is successful.
   this.mytoast = this.toast.create({
     message: message,
     duration: 2000
